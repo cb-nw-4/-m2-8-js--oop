@@ -49,3 +49,7 @@ class Cat {
         console.log("Loneliness after the wait of "+minutes+" minutes:"+this.loneliness);
     }
 }
+
+let boots=new Cat("Boots", "Siamese");
+boots.wait(120);
+console.log(boots);
