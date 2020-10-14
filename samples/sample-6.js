@@ -1,6 +1,6 @@
 class Dog {
   constructor() {
-    this.hunger = 0;
+    this.food = {amount:1}
   }
 
   remaining = () => {
