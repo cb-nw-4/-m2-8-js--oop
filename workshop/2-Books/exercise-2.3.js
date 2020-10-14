@@ -22,6 +22,50 @@
 //
 // The following code will fail by default. Your goal is to get it to run, and output the values specified at the end:
 
+class Book {
+    constructor(title, genre, author, isRead = false) {
+        this.title = title;
+        this.genre = genre;
+        this.author = author;
+        this.isRead = isRead;
+    }
+}
+
+class BookList extends Book {
+    // Code here
+
+    constructor(title, genre, author, isRead, books, lastRead, currentlyReading) {
+        super(title, genre, author, isRead);
+        this.books = [];
+        this.lastRead = null;
+        this.currentlyReading = null;
+    }
+
+    add = (book) => {
+
+        this.books.push(book);
+
+        if (this.currentlyReading === null) {
+            return this.currentlyReading = book;
+        };
+    }
+
+
+    getNumRead = () => {
+        return this.books.filter(book => { return book.isRead }).length;
+
+    }
+
+    getNumUnread = () => {
+        return this.books.filter(book => { return !(book.isRead) }).length;
+
+    }
+
+}
+
+
+
+
 const homeLibrary = new BookList();
 
 // Books are unread by default:
@@ -30,7 +74,7 @@ homeLibrary.add(new Book('American Gods', 'Fiction', 'Neil Gaiman'));
 
 // But, we can specify that we've read it:
 homeLibrary.add(
-  new Book('Eloquent JavaScript', 'Programming', 'Marijn Haverbeke', true)
+    new Book('Eloquent JavaScript', 'Programming', 'Marijn Haverbeke', true)
 );
 
 // At this point, we should have 2 unread books, and 1 read book:
