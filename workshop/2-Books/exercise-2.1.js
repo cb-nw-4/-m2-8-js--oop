@@ -16,11 +16,11 @@
 // Console.log them to verify that all is working.
 
 class Book {
-    constructor(title, genre, author, isRead) {
+    constructor(title, genre, author, isRead = false) {
         this.title = title;
         this.genre = genre;
         this.author = author;
-        this.isRead = false;
+        this.isRead = isRead;
     }
 }
 
@@ -32,7 +32,7 @@ book1 = new Book('JFK: Coming of Age in the American Century, 1917-1956',
 book2 = new Book('To Sleep in a Sea of Stars',
     'Science Fiction',
     'Christopher Paolini',
-    false);
+    true);
 
 book3 = new Book('Eat a Peach',
     'Business',
