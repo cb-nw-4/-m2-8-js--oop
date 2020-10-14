@@ -11,7 +11,7 @@
 // By the way, Boots is a Simaese cat...
 
 class Cat {
-    constructor (name, breed) {
+    constructor(name, breed) {
         this.name = name;
         this.breed = breed;
         this.species = 'cat';
