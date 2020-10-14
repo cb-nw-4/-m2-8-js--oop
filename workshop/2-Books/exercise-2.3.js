@@ -29,6 +29,9 @@ class BookList {
     if (this.currentlyReading === null) {
       this.currentlyReading = book;
     }
+    else {
+      this.currentlyReading = book
+    }
   };
 
   getNumRead = () => {
@@ -82,6 +85,8 @@ homeLibrary.add(new Book("American Gods", "Fiction", "Neil Gaiman"));
 homeLibrary.add(
   new Book("Eloquent JavaScript", "Programming", "Marijn Haverbeke", true)
 );
+
+console.log(homeLibrary)
 
 // At this point, we should have 2 unread books, and 1 read book:
 console.log(homeLibrary.getNumUnread()); // 2
