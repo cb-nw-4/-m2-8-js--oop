@@ -2,6 +2,37 @@
 // Copy over your solutions classes you created in 2.1 and 2.2.
 // Paste them right here:
 
+
+class Book {
+  constructor (title, genre, author, isRead=false) {
+    this.title = title
+    this.genre = genre
+    this.author = author
+    this.isRead = isRead
+  }
+}
+
+book1 = new Book('Harry Potter 1', 'Fantasy', 'J.K. Rowling')
+book2 = new Book('Harry Potter 1', 'Fantasy', 'J.K. Rowling', true)
+book3 = new Book('Harry Potter 1', 'Fantasy', 'J.K. Rowling', false)
+book4 = new Book('Harry Potter 1', 'Fantasy', 'J.K. Rowling', false)
+book5 = new Book('Harry Potter 1', 'Fantasy', 'J.K. Rowling', false)
+
+class BookList {
+  // Code here
+  constructor () {
+    this.books = []
+    this.lastRead = this.books.length[this.books.length - 1]
+    this.currentlyReading = this.books.length
+  }
+}
+
+let homeLibrary = new Booklist()
+
+
+
+
+
 // Exercise 2.3
 //
 // We want to be able to add books to our BookList, so that we can start a
