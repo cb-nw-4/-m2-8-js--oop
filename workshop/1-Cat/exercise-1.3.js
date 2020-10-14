@@ -22,3 +22,75 @@
 // You decide how much sleep, eat, and play affects your cat's happiness.
 
 // B) call the different methods with appropriate values and then console.log boots to see what happened to the property values.
+
+class Cat {
+    constructor(name, breed) {
+        this.name = name;
+        this.breed = breed;
+        this.species = 'cat';
+        this.tiredness = 50;
+        this.hunger = 10;
+        this.loneliness = 20;
+        this.happiness = 100 - (this.tiredness + this.hunger + this.loneliness);
+    }
+
+    sleep = (hours) => {
+        this.tiredness -= (hours * 5);
+
+        if (this.tiredness < 0) {
+            this.tiredness = 0;
+        }
+
+        this.happiness = 100 - (this.tiredness + this.hunger + this.loneliness);
+    }
+
+    eat = (kibble) => {
+        this.hunger -= (kibble * 0.2);
+
+        if (this.hunger < 0) {
+            this.hunger = 0;
+        }
+
+        this.happiness = 100 - (this.tiredness + this.hunger + this.loneliness);
+    }
+
+    play = (minutes) => {
+        this.loneliness -= (minutes * 3);
+
+        if (this.loneliness < 0) {
+            this.loneliness = 0;
+        }
+
+        this.happiness = 100 - (this.tiredness + this.hunger + this.loneliness);
+    }
+}
+
+felix = new Cat('Felix', 'Simaese');
+
+// felix object after being instantiated
+Cat {
+    sleep: [Function: sleep],
+    eat: [Function: eat],
+    play: [Function: play],
+    name: 'Felix',
+    breed: 'Simaese',
+    species: 'cat',
+    tiredness: 50,
+    hunger: 10,
+    loneliness: 20,
+    happiness: 20
+}
+
+// felix object after calling various methods:
+Cat {
+    sleep: [Function: sleep],
+    eat: [Function: eat],
+    play: [Function: play],
+    name: 'Felix',
+    breed: 'Simaese',
+    species: 'cat',
+    tiredness: 45,
+    hunger: 8,
+    loneliness: 0,
+    happiness: 47
+}
