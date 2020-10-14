@@ -41,7 +41,7 @@ class BookList {
   add = (book)=>{
     this.books.push(book);
     if (this.currentlyReading === null) 
-      this.currentlyReading = book;
+      this.currentlyReading = this.books;
   };
 
   getNumRead = ()=>{
