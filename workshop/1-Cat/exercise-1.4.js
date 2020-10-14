@@ -44,9 +44,11 @@ class Cat {
         this.tiredness=this.tiredness+(minutes*0.456);
         this.hunger=this.hunger+(minutes*0.523);
         this.loneliness=this.loneliness+(minutes*0.279);
+        this.happiness=this.happiness-(minutes*0.196);
         console.log("Tiredness after the wait of "+minutes+" minutes:"+this.tiredness);
         console.log("Hunger after the wait of "+minutes+" minutes:"+this.hunger);
         console.log("Loneliness after the wait of "+minutes+" minutes:"+this.loneliness);
+        console.log("Happiness after the wait of "+minutes+" minutes:"+this.happiness);
     }
 }
 
