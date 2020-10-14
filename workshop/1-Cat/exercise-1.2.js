@@ -22,9 +22,9 @@ class Cat {
     }
 }
 
-boots = new Cat('Felix', 'Simaese');
+felix = new Cat('Felix', 'Simaese');
 
-// boots object:
+// felix object:
 Cat {
     name: 'Felix',
     breed: 'Simaese',
