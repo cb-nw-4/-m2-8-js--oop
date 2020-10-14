@@ -24,7 +24,7 @@ class Book {
     }
 }
 
-let book1 = new livre("Harry Potter and the philosopher/'s stone", "fantastic", "j.k. rolling", isRead )
+let book1 = new livre("Harry Potter and the philosopher's stone", "fantastic", "j.k. rolling", isRead )
 let book2 = new livre("Harry Potter and the prisoner of azkaban", "fantastic", "j.k. rolling", isRead )
 let book3 = new livre("Harry Potter and the goblet of fire", "fantastic", "j.k. rolling", isRead )
 let book4 = new livre("Harry Potter and the deathly hallows", "fantastic", "j.k. rolling",)
