@@ -16,18 +16,18 @@
 // Console.log them to verify that all is working.
 
 class Book {
-    constructor(title){
+    constructor(title, genre, author, isRead){
         this.title = title;
         this.genre = genre;
         this.author = author;
-        this.isRead = isRead || false
+        this.isRead = isRead || false;
     }
 }
 
-let book1 = new livre("Harry Potter and the philosopher's stone", "fantastic", "j.k. rolling", isRead )
-let book2 = new livre("Harry Potter and the prisoner of azkaban", "fantastic", "j.k. rolling", isRead )
-let book3 = new livre("Harry Potter and the goblet of fire", "fantastic", "j.k. rolling", isRead )
-let book4 = new livre("Harry Potter and the deathly hallows", "fantastic", "j.k. rolling",)
-let book5 = new livre("Harry Potter and the half-blood prince", "fantastic", "j.k. rolling",)
+let book1 = new Book("Harry Potter and the philosopher's stone", "fantastic", "j.k. rolling", true )
+let book2 = new Book("Harry Potter and the prisoner of azkaban", "fantastic", "j.k. rolling", true )
+let book3 = new Book("Harry Potter and the goblet of fire", "fantastic", "j.k. rolling", true )
+let book4 = new Book("Harry Potter and the deathly hallows", "fantastic", "j.k. rolling", false)
+let book5 = new Book("Harry Potter and the half-blood prince", "fantastic", "j.k. rolling",)
 
 console.log(book1, book2, book3, book4, book5);
