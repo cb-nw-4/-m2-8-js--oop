@@ -53,7 +53,7 @@ class Cat {
 let boots = new Cat(25, 30, 10, 20, 'Boots', 'Siamese');
 boots.sleep(3);
 boots.eat(40);
-boots.play(10)
+boots.play(10);
 
 //When I console.log(boots):
 Cat {species: "cat", tiredness: 10, sleep: ƒ, eat: ƒ, play: ƒ, …}
