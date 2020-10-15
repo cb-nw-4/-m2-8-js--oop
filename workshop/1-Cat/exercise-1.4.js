@@ -47,6 +47,7 @@ class Cat {
 // B) Make Boots wait 20 minutes and call then console.log(boots);
 let boots = new Cat(25, 30, 10, 20, 'Boots', 'Siamese');
 boots.wait(20);
+console.log(boots);
 
 //When I console.log(boots):
 Cat {species: "cat", sleep: ƒ, eat: ƒ, play: ƒ, wait: ƒ, …}
