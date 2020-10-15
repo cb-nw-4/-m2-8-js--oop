@@ -23,6 +23,7 @@ class Cat {
 }
 
 let boots = new Cat('Boots', 'Siamese');
+console.log(boots);
 
 //When I console.log(boots), I can confirm that eveything is there:
 Cat {species: "cat", tiredness: 0, hunger: 0, lonliness: 0, happiness: 0, …}
