@@ -1,5 +1,65 @@
 // From 2.3
 // Copy over all of the code from 2.3...
+class Book {
+  constructor(title, genre, author, isRead = false) {
+      this.title = title;
+      this.genre = genre;
+      this.author = author;
+      this.isRead = isRead;
+  }
+}
+
+class BookList {
+  constructor() {
+    this.books = [];
+    this.lastRead = null;
+    this.currentlyReading = null;
+  };
+
+    add = (book) => {
+      this.books.push(book);
+      if (this.currentlyReading === null) {
+        this.currentlyReading = book;
+      }
+    }
+
+    getNumRead = () => {
+      let bookRead = 0;
+      this.books.forEach((book) => {
+        if (book.isRead === true) {
+          bookRead += 1;
+        }
+      })
+      return bookRead;
+    }
+
+    getNumUnread = () => {
+      let bookUnread = 0;
+      this.books.forEach((book) => {
+        if (book.isRead === false) {
+          bookUnread += 1;
+        }
+      })
+      return bookUnread;
+    }
+
+    startReading = (bookTitle) => {
+      this.books.forEach((book) => {
+        if (book.title.toLowerCase() === bookTitle.toLowerCase()) {
+          this.currentlyReading = book;
+        }
+      })
+    }
+
+    finishReading = (bookTitle) => {
+      this.books.forEach((book) => {
+        if (book.title.toLowerCase() === bookTitle.toLowerCase()) {
+          this.currentlyReading = null;
+          this.lastRead = book;
+        };
+      })
+    }
+}
 
 // Exercise 2.4
 /*
@@ -55,6 +115,6 @@ console.log('Last-read, after finishing The Shining', homeLibrary.lastRead); // 
 
 homeLibrary.startReading('The Revisionists');
 console.log(
-  'Currentky reading, After starting The Revisionists',
+  'Currently reading, After starting The Revisionists',
   homeLibrary.currentlyReading
 ); // should be The Revisionists book
