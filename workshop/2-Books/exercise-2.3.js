@@ -2,6 +2,51 @@
 // Copy over your solutions classes you created in 2.1 and 2.2.
 // Paste them right here:
 
+class Book {
+  constructor(title, genre, author, isRead = false) {
+      this.title = title;
+      this.genre = genre;
+      this.author = author;
+      this.isRead = isRead;
+  }
+}
+
+class BookList {
+  constructor() {
+    this.books = [];
+    this.lastRead = null;
+    this.currentlyReading = null; 
+  }
+
+  add = (book) => {
+    this.books.push(book);
+    if (this.currentlyReading === null) {
+      this.currentlyReading = book;
+    }
+  }
+
+  getNumRead = () => {
+    let countRead = 0;
+    this.books.forEach(book => {
+      if (book.isRead) {
+        countRead = countRead + 1;
+      }
+    })
+    return countRead;
+  }
+
+  getNumUnread = () => {
+    let countUnread = 0;
+    this.books.forEach(book => {
+      if (!book.isRead) {
+        countUnread = countUnread + 1;
+      }
+    })
+    return countUnread;
+  }
+}
+
+
 // Exercise 2.3
 //
 // We want to be able to add books to our BookList, so that we can start a
