@@ -4,7 +4,7 @@ class Dog {
   }
 
   run = () => {
-    this.eat();
+    this.eat(); // There is no eat function. Fix: this.hunger+=10;
   };
 
   food = () => {

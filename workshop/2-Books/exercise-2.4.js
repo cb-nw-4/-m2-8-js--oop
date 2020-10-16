@@ -1,6 +1,54 @@
 // From 2.3
 // Copy over all of the code from 2.3...
 
+class Book {
+  constructor (title,genre,author,isRead=false) { 
+      this.title =title; 
+      this.genre= genre;
+      this.author=author; 
+      this.isRead= isRead; 
+  } 
+};
+
+class BookList {
+  constructor () { 
+    this.books = []; 
+    this.lastRead = null;
+    this.currentlyReading = null; 
+  }
+  add = (book) => { 
+    this.books.push(book);
+    if (this.currentlyReading===null) { 
+      this.currentlyReading = book.title; 
+    }; 
+  }; 
+  getNumRead = () => { 
+    let numRead = 0; 
+    this.books.forEach((element)=> { 
+      if(element.isRead === true) { 
+        numRead +=1; 
+      }
+    });
+    return numRead; 
+  };
+  getNumUnread = () => { 
+    let numUnread = 0; 
+    this.books.forEach((element)=> { 
+      if(element.isRead === false) { 
+        numUnread +=1; 
+      }
+    });
+    return numUnread; 
+  };
+  startReading = (bookTitle) => { 
+    this.currentlyReading = bookTitle;
+  }; 
+  finishReading = (bookTitle) => { 
+    this.currentlyReading = null; 
+    this.lastRead=bookTitle;
+  }; 
+}
+
 // Exercise 2.4
 /*
 
