@@ -9,3 +9,28 @@
 // and confirm that you have everything in there.
 
 // By the way, Boots is a Simaese cat...
+
+class Cat {
+    constructor(name, breed) {
+        this.species = 'cat';
+        this.tiredness = 0;
+        this.hunger = 0;
+        this.lonliness = 0;
+        this.happiness = 0;
+        this.name = name;
+        this.breed = breed;
+    }
+}
+
+let boots = new Cat('Boots', 'Siamese');
+console.log(boots);
+
+//When I console.log(boots), I can confirm that eveything is there:
+Cat {species: "cat", tiredness: 0, hunger: 0, lonliness: 0, happiness: 0, …}
+breed: "Siamese"
+happiness: 0
+hunger: 0
+lonliness: 0
+name: "Boots"
+species: "cat"
+tiredness: 0
