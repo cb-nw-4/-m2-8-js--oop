@@ -51,7 +51,8 @@ class BookList {
 
   finishReading = (bookTitle) => {
     this.currentlyReading = null;
-    this.lastRead = bookTitle;
+    let finishReadingObj = this.books.filter(book => {return book.title === bookTitle});
+    this.lastRead = finishReadingObj;
   }
 }
 
