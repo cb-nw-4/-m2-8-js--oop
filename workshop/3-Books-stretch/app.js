@@ -1,9 +1,10 @@
 class Book {
-    constructor(title, genre, author, isRead = false){
+    constructor(title, genre, author, isRead = false, imgLink = null){
         this.title = title;
         this.genre = genre;
         this.author = author;
         this.isRead = isRead;
+        this.imgLink = imgLink
     }  
   }
   
@@ -55,7 +56,7 @@ class Book {
     };
   }
   
-  let book1 = new Book("I Am That", "philosophy", "Nisargaddatta Maharaj", true);
+  let book1 = new Book("I Am That", "philosophy", "Nisargaddatta Maharaj", true, "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQOrqr94UR8CdrsZ4axKS48sysAnMJnj5qleQwvGAXx4KUS9wnL");
 let book2 = new Book("Silence of the Heart", "philosophy", "Robert Adam", true);
 let book3 = new Book("Wars and lies", "history", "Sylvain Laforest", true);
 let book4 = new Book("Chronique du mondialisme", "history", "Pierre Hillard", false);
@@ -70,34 +71,58 @@ homeLibrary.add(book5);
 
 const book = document.querySelector(".booklist");
 
-const updateBooklist = ()=> { 
+const createBookDiv = (newBook)=>{
+  const myDiv = document.createElement("div");
+  book.appendChild(myDiv);
+  let bookInfo = document.createElement("img");
+  bookInfo.src = newBook.imgLink || "";
+  myDiv.appendChild(bookInfo);
+
+
+  bookInfo = document.createElement("h3");
+  bookInfo.innerHTML = `<strong>Title: </strong>${newBook.title}`;
+  myDiv.appendChild(bookInfo);
+  bookInfo = document.createElement("p");
+  bookInfo.innerHTML = `<strong>Genre: </strong>${newBook.genre}`;
+  myDiv.appendChild(bookInfo);
+  bookInfo = document.createElement("p");
+  bookInfo.innerHTML = `<strong>Author: </strong>${newBook.author}`;
+  myDiv.appendChild(bookInfo);
+  myDiv.classList.add("book");
+  bookInfo = document.createElement("p");
+  const isRead = newBook.isRead ? "yes" : "no";
+  bookInfo.innerHTML = `<strong>Already read: </strong>${isRead}`;
+  myDiv.appendChild(bookInfo);
+  myDiv.classList.add("book");
+};
+
+const formatDate = (num)=>{
+  let newNum = "0" + num;
+  return newNum.slice(-2);
+};
+
+const initializeBooklist = ()=> { 
     homeLibrary.books.forEach((aBook)=>{
-        const myDiv = document.createElement("div");
-        book.appendChild(myDiv);
-        let bookInfo = document.createElement("h3");
-        bookInfo.innerHTML = `<strong>Title: </strong>${aBook.title}`;
-        myDiv.appendChild(bookInfo);
-        bookInfo = document.createElement("p");
-        bookInfo.innerHTML = `<strong>Genre: </strong>${aBook.genre}`;
-        myDiv.appendChild(bookInfo);
-        bookInfo = document.createElement("p");
-        bookInfo.innerHTML = `<strong>Author: </strong>${aBook.author}`;
-        myDiv.appendChild(bookInfo);
-        myDiv.classList.add("book");
+      createBookDiv(aBook);      
     });
-}
+};
+
+const updateBookList = ()=> {
+  let aBook = homeLibrary.books[homeLibrary.books.length -1];
+  createBookDiv(aBook);
+};
+
+const updateFinishedReading = ()=> { 
+  const lastBook = document.querySelector(".lastBook span")
+  var d = new Date();    
+  console.log(d);
+  lastBook.innerText = homeLibrary.lastRead !== null ? `${homeLibrary.lastRead.title} on ${formatDate(d.getDate())}.${formatDate(d.getMonth() + 1)}.${d.getFullYear()}` : "no book yet!";
+};
 
 const updateStartReading = ()=> {
 const currentBook = document.querySelector(".currentBook span")
 currentBook.innerText = homeLibrary.currentlyReading !== null ? homeLibrary.currentlyReading.title : "no book yet!";
-}
-
-const updateFinishedReading = ()=> { 
-    const lastBook = document.querySelector(".lastBook span")
-    var d = new Date();
-    
-    lastBook.innerText = homeLibrary.lastRead !== null ? `${homeLibrary.lastRead.title} on ${d.getDay()}/${d.getMonth()}/${d.getFullYear()}` : "no book yet!";
-}
+};
 
 const startBtn = document.querySelector(".start-btn");
 const startInput = document.querySelector("#startReading");
@@ -116,6 +141,19 @@ finishedBtn.addEventListener("click", ()=> {
     finishedInput.value = "";
 });
 
-updateBooklist();
+const form = document.querySelector("form");
+form.addEventListener("submit", (event)=> {
+  event.preventDefault();
+  const newBookTitle = document.getElementById("title");
+  const newBookGenre = document.getElementById("genre");
+  const newBookAuthor = document.getElementById("author");
+  const newBookIsRead = document.getElementById("isRead"); 
+  homeLibrary.add(new Book(newBookTitle.value, newBookGenre.value, newBookAuthor.value, newBookIsRead.checked));  
+  updateBookList(); 
+  form.reset();   
+});
+
+
+initializeBooklist();
 updateStartReading();
 updateFinishedReading();
