@@ -29,12 +29,6 @@ class Book {
       this.author = author;
       this.isRead = isRead || false;
   }
-  getNumRead = () => {
-    return this.lastRead 
-  }
-  getNumUnread = () => {
-    return this.currentlyReading
-  }
 }
 
 class BookList {
