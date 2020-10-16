@@ -76,12 +76,12 @@ class BookList {
   }
 
   startReading=(bookName)=>{
-    this.currentlyReading=this.books.filter((name)=>name.title===bookName);
+    this.currentlyReading=this.books.filter((book)=>book.title===bookName);
     this.lastRead=null;
   }
 
   finishReading=(bookName)=>{
-    this.lastRead=this.books.filter((name)=>name.title===bookName);
+    this.lastRead=this.books.filter((book)=>book.title===bookName);
     this.currentlyReading=null;
     this.lastRead.isRead=true;
   }
