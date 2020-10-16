@@ -44,13 +44,14 @@ class BookList {
     return countUnread;
   }
 
-  startReading = (title) => {
-    this.currentlyReading = title;
+  startReading = (bookTitle) => {
+    let startReadingObj = this.books.filter(book => {return book.title === bookTitle});
+    this.currentlyReading = startReadingObj;
   }
 
-  finishReading = (title) => {
+  finishReading = (bookTitle) => {
     this.currentlyReading = null;
-    this.lastRead = title;
+    this.lastRead = bookTitle;
   }
 }
 
