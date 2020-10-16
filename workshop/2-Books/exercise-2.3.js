@@ -85,7 +85,7 @@ homeLibrary.add(new Book("American Gods", "Fiction", "Neil Gaiman"));
 homeLibrary.add(
   new Book("Eloquent JavaScript", "Programming", "Marijn Haverbeke", true)
 );
-
+console.log(homeLibrary.currentlyReading)
 console.log(homeLibrary)
 
 // At this point, we should have 2 unread books, and 1 read book:
