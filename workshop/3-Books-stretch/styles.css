@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: 'Playfair Display', serif;
+}
+
+.bookshelf { 
+    border: 35px solid rgb(160, 122, 78);
+    background-color:rgb(228, 191, 149);
+    width:100vw; 
+    height:100vh;
+}
+
+.submitButton {
+    background-color: aliceblue;
+    border:1px solid grey;
+    border-radius: 4px;
+    padding: 3px;
+}; 
+

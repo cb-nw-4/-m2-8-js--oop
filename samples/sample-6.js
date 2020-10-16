@@ -4,7 +4,7 @@ class Dog {
   }
 
   remaining = () => {
-    console.log(this.food.amount);
+    console.log(this.food.amount); // amount ?? 
   };
 }
 

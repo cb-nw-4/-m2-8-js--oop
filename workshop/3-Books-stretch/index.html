@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Home Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <div class="bookshelf">
+        <h1 class="currentlyReading"></h1>
+        <form class=form> 
+            <div>To add a book to my Home Library:</div>
+            <div class="inputDiv">
+                <label for="bookTitle">Title:</label>
+                <input type="text" class="bookTitle" name="bookTitle">
+            </div>
+            <div class="inputDiv">
+                <label for="bookGenre">Genre:</label>
+                <input type="text" class="bookGenre" name="bookGenre">
+            </div>
+            <div class="inputDiv"> 
+                <label for="bookAuthor">Author:</label>
+                <input type="text" class="bookAuthor" name="bookAuthor">
+            </div>
+            <button class="submitButton" type="submit" name="submit">Submit</button>
+        </form>
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>

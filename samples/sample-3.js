@@ -8,9 +8,9 @@ class Student {
   };
 
   writeCode = () => {
-    learn();
+    learn(); // this.learn();
   };
 }
 
 let bob = new Student();
-bob.writeCode();
+bob.writeCode(); 
