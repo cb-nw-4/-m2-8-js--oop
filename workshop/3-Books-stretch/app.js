@@ -40,6 +40,7 @@ class Book {
         return book.title === bookTitle;
       });
       this.currentlyReading = theBook === undefined ? this.currentlyReading : theBook;
+     return theBook !== undefined;
   
     };
   
@@ -52,6 +53,7 @@ class Book {
         this.lastRead = theBook;
         theBook.isRead = true;
       }
+      return theBook !== undefined;
   
     };
   }
@@ -131,26 +133,39 @@ const updateIsReadSatus = ()=> {
 }
 
 const updateStartReading = ()=> {
-const currentBook = document.querySelector(".currentBook span")
+const currentBook = document.querySelector(".currentBook span");
 currentBook.innerText = homeLibrary.currentlyReading !== null ? homeLibrary.currentlyReading.title : "no book yet!";
 };
 
 const startBtn = document.querySelector(".start-btn");
 const startInput = document.querySelector("#startReading");
 startBtn.addEventListener("click", ()=> {
-    homeLibrary.startReading(startInput.value);
-    updateStartReading();
-    startInput.value = "";
+    let isUpdated = homeLibrary.startReading(startInput.value);
+    if (isUpdated) {
+      updateStartReading(); 
+      startInput.value = "";  
+    } 
+    else {
+      window.alert(`${startInput.value} is not a book in the library`);
+      startInput.focus();
+    }
+    
 });
 
 const finishedBtn = document.querySelector(".finished-btn");
 const finishedInput = document.querySelector("#finishedReading");
 finishedBtn.addEventListener("click", ()=> {
-    homeLibrary.finishReading(finishedInput.value);
-    updateFinishedReading();
-    updateStartReading();
-    updateIsReadSatus();
-    finishedInput.value = "";
+    let isUpdated = homeLibrary.finishReading(finishedInput.value);
+    if (isUpdated){
+      updateFinishedReading();
+      updateStartReading();
+      updateIsReadSatus();    
+      finishedInput.value = "";   
+    }   
+    else {
+      window.alert(`${finishedInput.value} is not a book in the library`);
+      finishedInput.focus();
+    }   
 });
 
 const form = document.querySelector("form");
