@@ -1,0 +1,115 @@
+
+body {
+   /* background-color: #f2f2f2;*/
+   background-color: #F8F8F8;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+h1 {
+    font-size: 64px;
+}
+
+h2{
+    font-size: 46px;
+
+}
+
+header {
+    background-color: black;
+    color: white;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.readingStatus {
+    background-color: dodgerblue;
+    color: white;
+    height: 175px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 50px;   
+}
+.reading {
+    margin-bottom: 30px;
+}
+.read-status-input{
+    width: 300px;
+    height: 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.btn {
+    font-style: inherit;
+    padding: 10px 30px;
+    color: white;
+    background-color: purple;
+    border: none;
+    border-radius: 5px;
+    margin-right: 40px;
+    font-size: 16px;
+}
+.form-btn {
+    margin-right: 0px;
+}
+
+form {
+    border: solid 1px purple;
+    border-radius: 10px;
+    margin: 80px 80px 20px 80px;
+    padding: 0 40px 40px 40px;
+    text-align: end;
+}
+form  h2{
+    text-align: center;
+}
+.checkbox {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: start;    
+    
+}
+.form-text {
+    width: 300px;
+    height: 30px;
+    margin: 10px;
+    border: solid 1px purple;
+    border-radius: 5px;
+    font-size: 18px;
+   
+    
+}
+
+.booklist-section {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.booklist {
+    display: flex;
+    /* flex-direction: column;
+    align-items: center; */
+    flex-wrap: wrap;
+}
+
+.book {
+    background-color: white;
+    margin: 30px 20px;
+    padding: 20px;
+    border-radius: 16px;
+    border: solid 1px lightgray;
+    width: 300px;
+    height: 200px;
+    box-shadow: 2px 2px 20px 2px lightgray;
+}
