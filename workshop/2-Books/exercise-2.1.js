@@ -16,11 +16,11 @@
 // Console.log them to verify that all is working.
 
 class Book {
-    constructor(title, genre, author, isRead) {
+    constructor(title, genre, author, isRead = false) {
         this.title = title;
         this.genre = genre;
         this.author = author;
-        this.isRead = isRead === undefined ? false : isRead;
+        this.isRead = isRead;
     }
 }
 
