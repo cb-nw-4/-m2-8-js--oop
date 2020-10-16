@@ -31,6 +31,62 @@ Your goal is to add the methods and behaviour necessary so that the following
 code runs well and produces the expected output.
 */
 
+class Book {
+  constructor(title, genre, author, isRead){
+      this.title=title;
+      this.genre=genre;
+      this.author=author;
+      this.isRead=isRead||false;
+  }
+}
+
+class BookList {
+  // Code here
+  constructor(){
+    this.books=[];
+    this.lastRead=null;
+    this.currentlyReading=null;
+  }
+  add=(book)=>{
+    this.books.push(book);
+    if(this.currentlyReading===null){
+      this.currentlyReading=book;
+    }
+  }
+  
+  getNumRead=()=>{
+    let read=0;
+    this.books.forEach(function(book){
+      //console.log(book.isRead);
+      if(book.isRead===true){
+        read++;
+      }
+    });
+    return read;
+  }
+
+  getNumUnread=()=>{
+    let notRead=0;
+    this.books.forEach(function(book){
+      if(book.isRead===false){
+        notRead++;
+      }
+    });
+    return notRead;
+  }
+
+  startReading=(bookName)=>{
+    this.currentlyReading=this.books.filter((book)=>book.title===bookName);
+    this.lastRead=null;
+  }
+
+  finishReading=(bookName)=>{
+    this.lastRead=this.books.filter((book)=>book.title===bookName);
+    this.currentlyReading=null;
+    this.lastRead.isRead=true;
+  }
+}
+
 const homeLibrary = new BookList();
 
 homeLibrary.add(new Book('The Shining', 'Horror', 'Stephen King'));
@@ -55,6 +111,6 @@ console.log('Last-read, after finishing The Shining', homeLibrary.lastRead); // 
 
 homeLibrary.startReading('The Revisionists');
 console.log(
-  'Currentky reading, After starting The Revisionists',
+  'Currently reading, After starting The Revisionists',
   homeLibrary.currentlyReading
 ); // should be The Revisionists book
