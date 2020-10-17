@@ -1,11 +1,15 @@
 class Student {
-  constructor() {
-    this.excitement = 1;
-  }
+    constructor() {
+        this.excitement = 1;
+    }
 
-  writeCode = () => {
-    this.learn();
-  };
+    learn = () => {
+        this.excitement += 10;
+    }
+
+    writeCode = () => {
+        this.learn();
+    };
 }
 
 let bob = new Student();
