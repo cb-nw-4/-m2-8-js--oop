@@ -13,4 +13,6 @@ class Student {
 }
 
 let bob = new Student();
-bob.writeCode();
+bob.learn();
+console.log(bob.learn();)
+
