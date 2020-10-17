@@ -14,8 +14,20 @@
 // }
 
 class Cat {
+  constructor (name){
+    this.name = name;
+    this.species = 'cat';
+    this.tiredness = 0;
+    this.hunger = 0;
+    this.loneliness = 0;
+    this.happiness = 0;
+  }
   // Add code here
 }
+
+let Boots = new Cat('Boots');
+
+console.log(Boots.species);
 
 // B) Instantiate a cat called 'boots' with the Cat class.
 

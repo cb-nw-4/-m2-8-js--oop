@@ -1,0 +1,107 @@
+
+
+.main{
+    font-family: 'Commissioner', sans-serif;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+h1 {
+    font-family: 'Commissioner', sans-serif;
+    text-align: center;
+
+}
+
+.collection {
+    font-family: 'Commissioner', sans-serif;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+
+}
+
+li{
+    margin: 5px;
+    display: flex;
+    padding: 50px;
+    padding-top: 20px;
+    min-width: 250px;
+    flex-direction: column;
+    border-radius: 16px;
+    border-color: blue;
+    font-size: 20px;
+    border: 1px solid #BFBFBF;
+    box-shadow: 10px 10px 5px #aaaaaa;
+      /* box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+      0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+      0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07); */
+    
+}
+
+li:hover{
+    background-color: lightsalmon;
+    
+    cursor: pointer;
+}
+
+.inputs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.finReadboxlabel{
+    width: 150px;
+    margin: 15px;
+}
+
+.finReadbox{
+    display: flex;
+    width: 20px;
+    margin: 15px;
+}
+
+input {
+    margin: 5px;
+    width: 200px;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: none;
+}
+
+input:focus{
+    box-shadow: 0 0 5px rgba(18, 101, 255);
+}
+
+label {
+    font-family: 'Commissioner', sans-serif;
+    display: inline-block;
+    width: 120px;
+}
+
+.finread{
+    display: flex;
+}
+
+.finreadBox{
+    width:200px;
+}
+
+
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background-color: hsl(333deg, 100%, 44%);
+    color: white;
+    font-family: 'Jost', sans-serif;
+    border-radius: 16px;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+}   
