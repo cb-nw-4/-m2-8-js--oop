@@ -22,6 +22,50 @@
 //
 // The following code will fail by default. Your goal is to get it to run, and output the values specified at the end:
 
+class Book {
+  constructor (title, genre, author, isRead=false){
+      this.title = title;
+      this.genre = genre;
+      this.author = author;
+      this.isRead = isRead;
+  }
+}
+
+class BookList {
+  constructor (nae){
+    this.books = [];
+    this.lastRead = null;
+    this.currentlyReading = null;
+  }
+  /**ADD */
+  add = (newBook) => {
+    this.books.push(newBook);
+    if(this.currentlyReading == null){
+      this.currentlyReading = newBook;
+    }
+    if(newBook.isRead == true){
+      this.lastRead = newBook;
+    }
+  };
+  /**getNumUnread */
+  getNumUnread = () =>{
+    let num = 0;
+    this.books.forEach(book =>{
+      if(book.isRead ==false){num++;}
+    });
+    return num;
+  };
+  /**getNumRead */
+  getNumRead = () =>{
+    let num = 0;
+    this.books.forEach(book =>{
+      if(book.isRead ==true){num++;}
+    });
+    return num;
+  };
+
+}
+
 const homeLibrary = new BookList();
 
 // Books are unread by default:
