@@ -31,6 +31,59 @@ Your goal is to add the methods and behaviour necessary so that the following
 code runs well and produces the expected output.
 */
 
+class Book {
+  constructor(title, genre, author, isRead) {
+      this.title = title;
+      this.genre = genre;
+      this.author = author;
+      this.isRead = isRead || false;
+  }
+}
+
+class BookList extends Book {
+  // Code here
+  constructor() {
+    super();
+    this.books = [];
+    this.lastRead = null;
+    this.currentlyReading = null;
+  }
+  add = (book) => {
+    this.books.push(book);
+    if (this.currentlyReading === null) {
+      this.currentlyReading = book;
+    }
+    return book;
+}
+  getNumRead = (book) => {
+  let totalRead = 0;
+  this.books.map((book) => {
+    if (book.isRead === true) {
+      totalRead += 1;
+    }
+  })
+  return totalRead;
+}
+getNumUnread = (book) => {
+  let totalUnread = 0;
+  this.books.map((book) => {
+    if (book.isRead === false) {
+      totalUnread += 1;
+    }
+  })
+  return totalUnread;
+}
+startReading = (bookTitle) => {
+let bookToRead = this.books.find(book => book.title === bookTitle);
+this.currentlyReading = bookToRead;
+}
+finishReading = (bookTitle) => {
+let lastBook = this.books.find(book => book.title === bookTitle);
+this.lastRead = lastBook;
+this.currentlyReading = null;
+}
+}
+
 const homeLibrary = new BookList();
 
 homeLibrary.add(new Book('The Shining', 'Horror', 'Stephen King'));
@@ -42,6 +95,8 @@ homeLibrary.add(new Book('The Eire Affair', 'Fantasy', 'Jasper Fforde'));
 homeLibrary.add(
   new Book('The Revisionists', 'Science-fiction', 'thomas Mullen')
 );
+
+console.log(homeLibrary);
 
 console.log('initial state', homeLibrary.currentlyReading); // should be The Shining book object
 console.log('initial last-read', homeLibrary.lastRead); // should be null
@@ -55,6 +110,6 @@ console.log('Last-read, after finishing The Shining', homeLibrary.lastRead); // 
 
 homeLibrary.startReading('The Revisionists');
 console.log(
-  'Currentky reading, After starting The Revisionists',
+  'Currently reading, After starting The Revisionists',
   homeLibrary.currentlyReading
 ); // should be The Revisionists book
