@@ -30,31 +30,63 @@ and set `lastRead` to the book we just finished.
 Your goal is to add the methods and behaviour necessary so that the following
 code runs well and produces the expected output.
 */
+class Book {
+  constructor(title, genre, author, isRead){
+      this.title = title;
+      this.genre = genre;
+      this.author = author;
+      this.isRead = isRead || false;
+  }
+}
+
+class BookList {
+  constructor() {
+    this.books = [];
+    this.lastRead = null;
+    this.currentlyReading = null;
+  }
+
+  add = (book) => {
+    this.books.push(book)
+  }
+
+  getNumRead = () => {
+  return  this.books.filter((book) =>{
+      return book.isRead 
+    }).length
+  }
+
+  getNumUnread = () => {
+    return  this.books.filter((book) =>{
+      return !book.isRead 
+    }).length
+  }
+
+  startReading = (book) => {
+    this.currentlyReading = book
+  }
+
+  finishReading = (book) => {
+    this.lastRead = book
+  }
+}
 
 const homeLibrary = new BookList();
 
-homeLibrary.add(new Book('The Shining', 'Horror', 'Stephen King'));
+homeLibrary.add(new Book('The Shining', 'Horror', 'Stephen King')); //lastRead
 homeLibrary.add(new Book('American Gods', 'Fiction', 'Neil Gaiman'));
-homeLibrary.add(
-  new Book('Eloquent JavaScript', 'Programming', 'Marijn Haverbeke', true)
-);
+homeLibrary.add(new Book('Eloquent JavaScript', 'Programming', 'Marijn Haverbeke', true));
 homeLibrary.add(new Book('The Eire Affair', 'Fantasy', 'Jasper Fforde'));
-homeLibrary.add(
-  new Book('The Revisionists', 'Science-fiction', 'thomas Mullen')
-);
+homeLibrary.add(new Book('The Revisionists', 'Science-fiction', 'thomas Mullen')); //currentlyReading
 
 console.log('initial state', homeLibrary.currentlyReading); // should be The Shining book object
 console.log('initial last-read', homeLibrary.lastRead); // should be null
 
 homeLibrary.finishReading('The Shining');
-console.log(
-  'Currently reading, after finishing The Shining',
-  homeLibrary.currentlyReading
-); // should be null
+console.log('Currently reading, after finishing The Shining',
+  homeLibrary.currentlyReading); // should be null
 console.log('Last-read, after finishing The Shining', homeLibrary.lastRead); // should be The Shining
 
 homeLibrary.startReading('The Revisionists');
-console.log(
-  'Currentky reading, After starting The Revisionists',
-  homeLibrary.currentlyReading
-); // should be The Revisionists book
+console.log('Currentky reading, After starting The Revisionists',
+  homeLibrary.currentlyReading); // should be The Revisionists book

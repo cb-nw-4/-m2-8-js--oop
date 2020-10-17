@@ -22,6 +22,36 @@
 //
 // The following code will fail by default. Your goal is to get it to run, and output the values specified at the end:
 
+class Book {
+  constructor(title, genre, author, isRead){
+      this.title = title;
+      this.genre = genre;
+      this.author = author;
+      this.isRead = isRead || false;
+  }
+}
+
+class BookList {
+  constructor() {
+    this.books = [];
+    this.lastRead = null;
+    this.currentlyReading = null;
+  }
+  add = (book) => {
+    this.books.push(book)
+  }
+  getNumRead = () => {
+  return  this.books.filter((book) =>{
+      return book.isRead 
+    }).length
+    
+  }
+  getNumUnread = () => {
+    return  this.books.filter((book) =>{
+      return !book.isRead 
+    }).length
+  }
+}
 const homeLibrary = new BookList();
 
 // Books are unread by default:
