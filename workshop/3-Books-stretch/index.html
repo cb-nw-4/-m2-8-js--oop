@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Jost:400,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <form action="">
+        <h3 class="title">Add Your Book!</h3>
+        <div class="title-div input-containers">
+          <label for="book-name">Book Title</label>
+          <input type="text" id="book-name" class="inputs" />
+        </div>
+        <div class="genre-div input-containers">
+          <label for="genre">Genre</label>
+          <input type="text" id="genre" class="inputs" />
+        </div>
+        <div class="author-div input-containers">
+          <label for="book-author">Author</label>
+          <input type="text" id="book-author" class="inputs" />
+        </div>
+        <div class="url-div input-containers">
+          <label for="book-url">Book Link</label>
+          <input type="text" id="book-url" class="inputs" />
+        </div>
+        <div class="buttons-container">
+          <button type="submit" class="submit-btn">Submit Book</button>
+          <button type="reset" class="reset-btn">Clear</button>
+        </div>
+      </form>
+      <div class="library">
+        <h3>My Library</h3>
+        <div class="books">
+        </div>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
