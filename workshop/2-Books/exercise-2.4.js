@@ -10,12 +10,6 @@ class Book {
   }
 }
 
-book1 = new Book("Harry Potter 1", "Fantasy", "J.K. Rowling", true);
-book2 = new Book("Harry Potter 1", "Fantasy", "J.K. Rowling", true);
-book3 = new Book("Harry Potter 1", "Fantasy", "J.K. Rowling", false);
-book4 = new Book("Harry Potter 1", "Fantasy", "J.K. Rowling", false);
-book5 = new Book("Harry Potter 1", "Fantasy", "J.K. Rowling", false);
-
 class BookList {
   // Code here
   constructor() {
