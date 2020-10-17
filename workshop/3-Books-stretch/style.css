@@ -1,0 +1,49 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: navy;
+    padding: 0 30px;
+    margin-left: 20px;
+}
+
+h2 {
+    color: royalblue;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+form div {
+    display: flex;
+    padding: 5px 0;
+    align-items: center;
+    color: navy;
+}
+
+input {
+    border: 2px solid lightblue;
+    padding: 5px;
+    margin: 0 10px;
+}
+
+.submit {
+    background-color: lightcoral;
+    padding: 8px;
+    margin: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.listBook {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+li {
+    padding: 5px;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+
+
+    <form id="bookForm">
+        <h1> Book Form</h1>
+        <h2> Add book to library</h2>
+        <div>
+            <label for="title">Book Title</label>
+            <input type="text" id="title" name="title" required/>
+        </div>
+
+        <div>
+            <label for="genre">Book Genre</label>
+            <input type="text" id="genre" name="genre" required/>
+        </div>
+        <div>
+            <label for="author">Book Author</label>
+            <input type="text" id="author" name="authoe" required/>
+        </div>
+
+        <div>
+            <label for="isRead">isRead</label>
+            <input type="checkbox" id="isRead" name="isRead" />
+        </div>
+
+        <div>
+            <button id="submit" class="submit" type="submit">Add</button>
+            <button id="clear" class="submit" type='reset'>Remove</button>
+
+        </div>
+
+    </form>
+
+    <div class="listBook">
+        <div id="listBook">
+            <h2>List of the books in the library</h2>
+        </div>
+
+
+
+        <div id="bookRead">
+            <h2>List of the current reading book </h2>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>
