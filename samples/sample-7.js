@@ -34,3 +34,4 @@ myFridge.addItem({
 });
 
 console.log(myFridge.getAllCalories()); // 1000
+console.log(myFridge);

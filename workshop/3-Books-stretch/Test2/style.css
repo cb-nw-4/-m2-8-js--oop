@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    background-color: #121212;
+    color: white;
+    opacity: 87%;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: space-evenly;
+}
+
+.bookBox {
+    border: yellow 1.5px solid;
+    width: calc(100%/4);
+    margin: 1vh 0.7vw;
+    height: 25vh;
+}
