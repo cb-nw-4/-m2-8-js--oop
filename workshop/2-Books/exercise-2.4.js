@@ -60,12 +60,6 @@ class BookList extends Book {
 
 
     getNumRead = () => {
-        return this.books.filter(book => {
-            return book.isRead.length;
-        })
-
-    }
-    getNumRead = () => {
         return this.books.filter(book => { return book.isRead }).length;
 
     }
@@ -75,6 +69,10 @@ class BookList extends Book {
 
     }
 
+    startReading = (title) => {
+        this.currentlyReading = this.books.filter(book => { return book.title === title });
+
+    }
 
     finishReading = (title) => {
         this.currentlyReading = null;
