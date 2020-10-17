@@ -1,6 +1,52 @@
 // From 2.3
 // Copy over all of the code from 2.3...
+class Book {
+  constructor (title, genre, author, isRead) {
+      this.title = title;
+      this.genre = genre;
+      this.author = author;
+      if (isRead === undefined) this.isRead = false;
+      else if (isRead === true) {
+        this.isRead = true;
+      }
+  }
+}
 
+class BookList {
+  constructor () {
+      this.books = []
+      this.lastRead = null;
+      this.currentlyReading = null;
+  }
+
+  add = (book) => {
+      this.books.push(book);
+      this.currentlyReading = book;
+
+  }
+
+  getNumRead = () => {
+      let n=0;
+      this.books.forEach(book => {if (book.isRead === true) n++;})
+      return n;
+  }
+
+  getNumUnread = () => {
+      let n=0;
+      this.books.forEach(book => {if (book.isRead === false) n++;})
+      return n;
+  }
+
+  startReading = (book) => {
+      this.currentlyReading = book;
+  }
+
+  finishReading = (book) => {
+    this.lastRead = book;
+    this.currentlyReading = null;
+}
+
+}
 // Exercise 2.4
 /*
 
@@ -55,6 +101,6 @@ console.log('Last-read, after finishing The Shining', homeLibrary.lastRead); // 
 
 homeLibrary.startReading('The Revisionists');
 console.log(
-  'Currentky reading, After starting The Revisionists',
+  'Currently reading, After starting The Revisionists',
   homeLibrary.currentlyReading
 ); // should be The Revisionists book
