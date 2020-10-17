@@ -21,6 +21,44 @@
 // respectively.
 //
 // The following code will fail by default. Your goal is to get it to run, and output the values specified at the end:
+class Book {
+  constructor(title, genre, author, isRead = false){
+      this.title = title;
+      this.genre = genre;
+      this.author = author;
+      this.isRead = isRead;
+  }
+  
+}
+
+class BookList {
+  constructor () {
+    this.books = [];
+    this.lastRead = null;
+    this.currentlyReading = null;
+  }
+
+  add = (book)=>{
+    this.books.push(book);
+    if (this.currentlyReading === null) 
+      this.currentlyReading = this.books;
+  };
+
+  getNumRead = ()=>{
+    return this.books.reduce((a,b)=>{
+      let add = b.isRead ? 1 : 0;
+      return a + add;
+    }, 0);
+  };
+
+  getNumUnread = ()=>{
+    return this.books.reduce((a,b)=>{
+      let add = b.isRead ? 0 : 1;
+      return a + add;
+    }, 0);
+  };
+}
+
 
 const homeLibrary = new BookList();
 

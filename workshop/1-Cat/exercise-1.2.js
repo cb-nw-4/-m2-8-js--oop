@@ -9,3 +9,30 @@
 // and confirm that you have everything in there.
 
 // By the way, Boots is a Simaese cat...
+
+class Cat {
+    // Add code here
+    constructor (name, breed ) {
+      this.name = name;
+      this.breed = breed;
+      this.species = "cat";
+      this.tiredness = 0;
+      this.hunger = 0;
+      this.loneliness = 0;
+      this.happiness = 0;
+    }
+  }
+
+  let boots = new Cat("Boots", "Simaese");
+  console.log(boots);
+
+//   Cat {name: "Boots", breed: "Simaese", species: "cat", tiredness: 0, hunger: 0, …}
+// breed: "Simaese"
+// happiness: 0
+// hunger: 0
+// loneliness: 0
+// name: "Boots"
+// species: "cat"
+// tiredness: 0
+// __proto__: Object
+  
