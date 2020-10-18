@@ -32,7 +32,7 @@ class Book {
 }
 
 class BookList {
-  constructor (nae){
+  constructor (){
     this.books = [];
     this.lastRead = null;
     this.currentlyReading = null;
@@ -42,9 +42,6 @@ class BookList {
     this.books.push(newBook);
     if(this.currentlyReading == null){
       this.currentlyReading = newBook;
-    }
-    if(newBook.isRead == true){
-      this.lastRead = newBook;
     }
   };
   /**getNumUnread */
