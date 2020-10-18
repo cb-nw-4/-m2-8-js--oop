@@ -22,3 +22,39 @@
 // You decide how much sleep, eat, and play affects your cat's happiness.
 
 // B) call the different methods with appropriate values and then console.log boots to see what happened to the property values.
+
+class Cat {
+    constructor(name,breed){
+        this.name = name;
+        this.breed = breed;
+        this.species = 'cat';
+        this.tiredness = 50;
+        this.hunger = 50;
+        this.loneliness = 50;
+        this.happiness = 0;
+    }
+/**SLEEP */
+    sleep = (hours) => {
+        this.tiredness = this.tiredness -5*hours;
+            if(this.tiredness <0){this.tiredness = 0;}
+            this.happiness =this.happiness + 10;
+    };
+/**EAT */
+    eat = (kibbles) => {
+        if(this.hunger>0){this.hunger = this.hunger - this.hunger/5;}
+        this.happiness =this.happiness + 15;
+    };
+/**PLAY */
+play = (minutes) => {
+    if(this.loneliness >0 ){this.loneliness = this.loneliness - minutes*3;}
+    this.happiness = this.happiness + 20;
+};
+/** */
+  }
+
+  let boots = new Cat("Boots","Siamese");
+  console.log(boots);
+  boots.sleep(2);
+  boots.eat(3);
+  boots.play(10);
+  console.log(boots);
