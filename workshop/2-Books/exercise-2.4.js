@@ -1,6 +1,62 @@
 // From 2.3
 // Copy over all of the code from 2.3...
 
+class Book {
+  constructor(title, genre, author, isRead = false){
+      this.title = title;
+      this.genre = genre;
+      this.author = author;
+      this.isRead = isRead;
+  }
+}
+
+class BookList {
+  constructor(){
+    this.books = [];
+    this.lastRead = null;
+    this.currentlyReading = null;
+  }
+  add(Book){
+    this.books.push(Book);
+    if (this.currentlyReading === null){
+      this.currentlyReading = Book;
+    }
+  }
+  getNumRead(books){
+    let readCountArray = [];
+    this.books.forEach((Book) => {
+      if (Book.isRead === true) {
+      readCountArray.push(Book);
+    }
+  })
+  return readCountArray.length;
+}
+  getNumUnread(books){
+    let unreadCountArray = [];
+    this.books.forEach((Book) => {
+      if (Book.isRead === false){
+      unreadCountArray.push(Book);
+      }
+    })
+    return unreadCountArray.length;
+}
+startReading(string){
+  this.books.filter((Book) => {
+    if (string === Book.title){
+      this.currentlyReading = Book.title;
+    }
+  })
+}
+
+finishReading(string){
+  this.currentlyReading = null;
+  this.books.filter((Book) => {
+    if (string === Book.title){
+      this.lastRead = Book.title;
+    }
+  })
+}
+}
 // Exercise 2.4
 /*
 
@@ -40,7 +96,7 @@ homeLibrary.add(
 );
 homeLibrary.add(new Book('The Eire Affair', 'Fantasy', 'Jasper Fforde'));
 homeLibrary.add(
-  new Book('The Revisionists', 'Science-fiction', 'thomas Mullen')
+  new Book('The Revisionists', 'Science-fiction', 'Thomas Mullen')
 );
 
 console.log('initial state', homeLibrary.currentlyReading); // should be The Shining book object
