@@ -22,6 +22,47 @@
 //
 // The following code will fail by default. Your goal is to get it to run, and output the values specified at the end:
 
+class Book {
+  constructor(title, genre, author, isRead) {
+      this.title = title;
+      this.genre = genre;
+      this.author = author;
+      this.isRead = isRead || false;
+  }
+}
+
+class BookList extends Book {
+  // Code here
+  constructor() {
+    super();
+    this.books = [];
+    this.lastRead = null;
+    this.currentlyReading = null;
+  }
+  add = (book) => {
+    this.books.push(book);
+    return book;
+}
+  getNumRead = (book) => {
+  let totalRead = 0;
+  this.books.map((book) => {
+    if (book.isRead === true) {
+      totalRead += 1;
+    }
+  })
+  return totalRead;
+}
+getNumUnread = (book) => {
+  let totalUnread = 0;
+  this.books.map((book) => {
+    if (book.isRead === false) {
+      totalUnread += 1;
+    }
+  })
+  return totalUnread;
+}
+}
+
 const homeLibrary = new BookList();
 
 // Books are unread by default:
@@ -32,6 +73,8 @@ homeLibrary.add(new Book('American Gods', 'Fiction', 'Neil Gaiman'));
 homeLibrary.add(
   new Book('Eloquent JavaScript', 'Programming', 'Marijn Haverbeke', true)
 );
+
+console.log(homeLibrary.books)
 
 // At this point, we should have 2 unread books, and 1 read book:
 console.log(homeLibrary.getNumUnread()); // 2
