@@ -31,6 +31,57 @@ Your goal is to add the methods and behaviour necessary so that the following
 code runs well and produces the expected output.
 */
 
+class Book {
+  constructor(title, genre, author, isRead = false) {
+      this.title = title;
+      this.genre = genre;
+      this.author = author;
+      this.isRead = isRead;
+  }
+}
+
+class BookList extends Book {
+
+  constructor(title, genre, author, isRead, books, lastRead, currentlyReading) {
+      super(title, genre, author, isRead);
+      this.books = [];
+      this.lastRead = null;
+      this.currentlyReading = null;
+  }
+
+  add = (book) => {
+
+      this.books.push(book);
+
+      if (this.currentlyReading === null) {
+          return this.currentlyReading = book;
+      };
+  }
+
+
+  getNumRead = () => {
+      return this.books.filter(book => { return book.isRead }).length;
+
+  }
+
+  getNumUnread = () => {
+      return this.books.filter(book => { return !(book.isRead) }).length;
+
+  }
+
+  startReading = (title) => {
+      this.currentlyReading = this.books.filter(book => { return book.title === title });
+
+  }
+
+  finishReading = (title) => {
+      this.currentlyReading = null;
+      this.lastRead = this.books.filter(book => { return book.title === title });
+
+  }
+
+}
+
 const homeLibrary = new BookList();
 
 homeLibrary.add(new Book('The Shining', 'Horror', 'Stephen King'));

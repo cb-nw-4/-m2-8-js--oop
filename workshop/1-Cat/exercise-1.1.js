@@ -38,3 +38,4 @@ let boots = new Cat();
 
 // D) What if I want to output just boots' species?
 console.log(boots.species);
+//cat

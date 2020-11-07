@@ -22,6 +22,6 @@ class Cat {
 
 // By the way, Boots is a Simaese cat...
 
-let boots = new Cat('Boots', 'Simaese');
+let boots = new Cat('Boots', 'Siamese cat');
 console.log(boots);
 
